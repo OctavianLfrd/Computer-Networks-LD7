@@ -52,7 +52,7 @@ header {
 
 #down-arrow-label {
     position: fixed;
-    right: calc(50% - 50px);
+    right: calc(50% - 48px);
     font-size: 8px;
     bottom: 40px;
 }
@@ -65,7 +65,7 @@ header {
     font-size: 16px;
 }
 
-.container-fluid {
+.container {
     height: 100%;
     position: relative;
     bottom: 60px;
