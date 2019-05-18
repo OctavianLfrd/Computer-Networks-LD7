@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12">
-        <h1 class="display-1 text-center header-color">Internet Configuration</h1>
+        <h2 class="display-1 text-center header-color">Internet Configuration</h2>
     </div>
     <div class="col-12">
         <h6 class="text-center header-color">Report 4</h6>

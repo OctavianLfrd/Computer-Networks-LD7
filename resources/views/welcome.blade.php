@@ -30,6 +30,9 @@
             <section id="section-3" class="container-section">
                 @include('reports.4')
             </section>
+            <section id="section-4" class="container-section">
+                @include('reports.5')
+            </section>
         </main>
         <footer>
             <img id="down-arrow-image"
