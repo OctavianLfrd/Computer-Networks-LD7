@@ -8,7 +8,8 @@ const contentSections = [
     { object: document.getElementById("section-1"), isCurrent: false },
     { object: document.getElementById("section-2"), isCurrent: false },
     { object: document.getElementById("section-3"), isCurrent: false },
-    { object: document.getElementById("section-4"), isCurrent: false }
+    { object: document.getElementById("section-4"), isCurrent: false },
+    { object: document.getElementById("section-5"), isCurrent: false }
 ];
 
 // Loading window:
