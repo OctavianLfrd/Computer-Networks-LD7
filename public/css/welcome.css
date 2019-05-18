@@ -65,7 +65,7 @@ header {
     font-size: 16px;
 }
 
-.container {
+.container-fluid {
     height: 100%;
     position: relative;
     bottom: 60px;

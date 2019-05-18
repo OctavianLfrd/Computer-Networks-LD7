@@ -23,31 +23,31 @@
                     MAC address
                 </div>
                 <div class="common-color">
-                    00:50:8d:67:93:67
+                    00:50:8d:67:93:67 (cmd: <code>lshw</code>)
                 </div>
                 <div class="title-color">
                     IP Address
                 </div>
                 <div class="common-color">
-                    192.168.0.120
+                    192.168.0.120 (cmd: <code>ifconfig</code>)
                 </div>
                 <div class="title-color">
                     Subnet mask
                 </div>
                 <div class="common-color">
-                    255.255.255.0
+                    255.255.255.0 (cmd: <code>ifconfig</code>)
                 </div>
                 <div class="title-color">
                     Default gateway
                 </div>
                 <div class="common-color">
-                    192.168.0.254
+                    192.168.0.254 (cmd: <code>netstat -rn</code>)
                 </div>
                 <div class="title-color">
                     DNS server IP address
                 </div>
                 <div class="common-color">
-                    df.rtu / 127.0.0.53
+                    df.rtu / 127.0.0.53 (cmd: <code>cat /etc/resolv.conf</code>)
                 </div>
             </div>
             <div class="col-md-6 title-color text-md-right title-bold">

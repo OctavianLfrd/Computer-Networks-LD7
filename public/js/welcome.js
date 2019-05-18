@@ -6,7 +6,8 @@ const contentSections = [
     { object: document.getElementById("header-section"), isCurrent: true },
     { object: document.getElementById("section-0"), isCurrent: false },
     { object: document.getElementById("section-1"), isCurrent: false },
-    { object: document.getElementById("section-2"), isCurrent: false }
+    { object: document.getElementById("section-2"), isCurrent: false },
+    { object: document.getElementById("section-3"), isCurrent: false }
 ];
 
 // Loading window:

@@ -1,25 +1,3 @@
-{{-- Atskaite
-===========================================================
-Datora numurs: 4.3
-Students: Alfreds Lapkovskis
-Datorvards: mainframe
-Datums: 12.02.2019.
-===========================================================
-1. Informacija par datoru:
-   datorvards: mainframe, cmd: hostname
-   lietotaja vards: alfred, cmd: whoami
-   processors: AMDAthlon 32bit, cmd: lshw
-   RAM kopigais apjoms: 1022560KB, cmd: free (vai lshw)
-   RAM brivais apjoms: 528116KB, cms: free (vai lshw)
-   HDD kopigais izmers: 40GB, cmd: lshw
-   HDD brivais apjoms: 37GB, cmd: lshw
-   tikla karte: VT6102/VT6103 [Rhine-II], cmd: lshw
-   videokarte: NVIDIA NV34 GeForce FX5200 32bit, cmd: lshw
-2. Fails adins:
-   izveidosana: cmd: nano
-   tiesibu iestadisana: chmod 444 adminis
-3. Lietotaja guest izveidosana: cmd: adduser guest
-4. Kataloga reports izveidosana: cmd: mkdir reports --}}
 <div class="row">
     <div class="col-12">
         <h2 class="display-2 header-color text-center">Ubuntu Console</h2>
@@ -108,14 +86,15 @@ Datums: 12.02.2019.
     <div class="col-md-6 title-color text-md-right title-bold">
         Creating a user "guest"
     </div>
-    <code>
-        adduser guest
-    </code>
+    <div class="col-md-6 secondary-list-font-size pt-2">
+        <code>
+            adduser guest
+        </code>
+    </div>
     <div class="col-md-6 title-color text-md-right title-bold">
         Creating reports catalogues
     </div>
-    <div>
-        Creating useraccount
+    <div class="col-md-6 secondary-list-font-size pt-2">
+        <code>mkdir reports</code>
     </div>
-    <code>mkdir reports</code>
 </div>

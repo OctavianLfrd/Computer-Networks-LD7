@@ -17,14 +17,14 @@
                 Mainframe
             </h1>
         </header>
-        <main class="container">
-            <section id="section-0" class="container-section">
+        <main class="container-fluid">
+            <section id="section-0" class="container container-section">
                 @include('info')
             </section>
-            <section id="section-1" class="container-section">
+            <section id="section-1" class="container container-section">
                 @include('reports.2')
             </section>
-            <section id="section-2" class="container-section">
+            <section id="section-2" class="container container-section">
                 @include('reports.3')
             </section>
             <section id="section-3" class="container-section">
