@@ -84,3 +84,17 @@ header {
     height: 100%;
     width: 100%;
 }
+
+#control-questions {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+}
+
+.controls {
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+}

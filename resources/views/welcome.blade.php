@@ -18,6 +18,12 @@
             </h1>
         </header>
         <main class="container-fluid">
+            <section id="fixed-control-questions">
+                @include("components.controlQuestions")
+            </section>
+            <section id="fixed-controls">
+                @include('components.controls')
+            </section>
             <section id="section-0" class="container container-section">
                 @include('info')
             </section>
@@ -43,7 +49,7 @@
                  class="d-block image-circle down-arrow"
                  width="60px"
                  alt="down-arrow">
-            <span id ="down-arrow-label" class="text-secondary">Scroll down to see content</span>
+            <span id="down-arrow-label" class="text-secondary">Scroll down to see content</span>
         </footer>
     </body>
     <script src="{{ asset('js/welcome.js') }}"></script>

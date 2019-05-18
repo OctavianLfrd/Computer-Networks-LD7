@@ -2,6 +2,10 @@
 
 const mainTitle = document.getElementById("main-title");
 const downArrowImage = document.getElementById("down-arrow-image");
+const downArrowLabel = document.getElementById("down-arrow-label");
+const controlButton = document.getElementById("control-button");
+const controlQuestionsButton = document.getElementById("control-questions");
+const controlMenu = document.getElementById("control-menu");
 const contentSections = [
     { object: document.getElementById("header-section"), isCurrent: true },
     { object: document.getElementById("section-0"), isCurrent: false },
@@ -52,30 +56,60 @@ window.onload = _ => {
             return this.currentDirection ? 1 : -1;
         }
     };
-    setInterval(_ => {
-        if (downArrow.opacity <= 0.4) downArrow.currentDirection = true;
-        else if (downArrow.opacity >= 1) downArrow.currentDirection = false;
-        downArrowImage.style.opacity = downArrow.opacity +=
-            downArrow.getIncrementSign() * 0.02;
-    }, 50);
+    var arrowImageInterval;
+    let startArrowImageInterval = _ => {
+        arrowImageInterval = setInterval(_ => {
+            if (downArrow.opacity <= 0.4) downArrow.currentDirection = true;
+            else if (downArrow.opacity >= 1) downArrow.currentDirection = false;
+            downArrowImage.style.opacity = downArrow.opacity +=
+                downArrow.getIncrementSign() * 0.02;
+        }, 50);
+    };
+    startArrowImageInterval();
 
     // Change content on scroll:
     let isBeingScrolled = false;
     document.body.onwheel = e => {
         let direction = e.deltaY > 0 ? 1 : -1;
         if (isBeingScrolled) return;
-        console.log("scrolls");
         let currentSection = contentSections.find(v => v.isCurrent === true);
         let nextSection = contentSections.find((_, i, a) => {
             if (i - direction < 0 || i - direction >= a.length) return false;
             return a[i - direction] === currentSection;
         });
         const scrollPage = _ => {
+            if (controlMenu.style.display !== "none") {
+                controlMenu.style.display = "none";
+            } else if (controlButton.style.display !== "none") {
+                controlButton.style.display = "none";
+            }
+            controlQuestionsButton.style.display = "none";
             let distanceScrolled = 0;
             const scrollPage = setInterval(_ => {
                 if (distanceScrolled >= 100) {
                     currentSection.isCurrent = false;
                     nextSection.isCurrent = true;
+                    if (
+                        nextSection.object !==
+                            document.getElementById("header-section") &&
+                        nextSection.object !==
+                            document.getElementById("section-0")
+                    ) {
+                        controlButton.style.display = "block";
+                    }
+                    if (
+                        nextSection.object ===
+                        document.getElementById("section-5")
+                    ) {
+                        clearInterval(arrowImageInterval);
+                        downArrowImage.style.opacity = 0;
+                        downArrowLabel.style.display = "none";
+                    } else if (downArrowLabel.style.display === "none") {
+                        downArrowImage.style.display = "block";
+                        downArrowLabel.style.display = "inline";
+                        startArrowImageInterval();
+                    }
+                    controlQuestionsButton.style.display = "inline-block";
                     isBeingScrolled = false;
                     clearInterval(scrollPage);
                 }
