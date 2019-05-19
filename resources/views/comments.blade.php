@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Computer networking - comments</title>
+    <title>Computer networking - {{ $title }} comments</title>
 </head>
 <body>
     <div class="container mt-5">
@@ -27,7 +27,7 @@
             </ol>
             @include('components.commentModal')
         </nav>
-        <section>
+        <section class="mb-5">
                 @if(count($comments) < 1)
                     <div class="container header-color list-font-size">
                         There are currently no comments
