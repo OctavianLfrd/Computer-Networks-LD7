@@ -35,14 +35,6 @@ header {
     bottom: 40px;
 }
 
-.list-font-size {
-    font-size: 24px;
-}
-
-.secondary-list-font-size {
-    font-size: 16px;
-}
-
 .container-fluid {
     height: 100%;
     position: relative;

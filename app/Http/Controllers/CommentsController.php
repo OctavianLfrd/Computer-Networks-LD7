@@ -10,9 +10,8 @@ class CommentsController extends Controller
     public function commentsView($workId)
     {
         $title = json_decode(DB::table('WorkTitles')->select('title')->where('work_id', $workId)->get())[0]->title;
-        // $comments = DB::table('Comments')->select('id', 'date', 'client', 'text')->where('client', $client)->get();
-        // return view('comments', ['ld' => $client, 'ldComments' => $comments]);
-        return view('comments', ['title' => $title]);
+        $comments = DB::table('Comments')->where('work_id', $workId)->get();
+        return view('comments', ['workId' => $workId, 'title' => $title, 'comments' => $comments]);
     }
 
     public function addComment($workId, Request $request)

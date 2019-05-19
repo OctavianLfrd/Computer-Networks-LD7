@@ -3,9 +3,10 @@
         const client = document.getElementById("client-name").value;
         const text = document.getElementById("comment-text").value;
         const commentButton = document.getElementById("send-comment-button");
+        const workId = commentButton.getAttribute("data-work-id");
         $.ajax({
             method: "POST",
-            url: `/comments/${ commentButton.getAttribute("work-id") }/add`,
+            url: `/comments/${ workId }/add`,
             data: {
                 client,
                 text
@@ -14,7 +15,15 @@
             success(response) {
                 $("#commentModal").modal("hide");
                 if (response) $("#commentSuccessModal").modal("show");
-                else $("#commentFailModal").modal("hide");
+                else $("#commentFailModal").modal("show");
+                if (commentButton.getAttribute("data-reload") === "1") {
+                    setTimeout(_ => {
+                        window.location.reload();
+                    }, 1000)
+                }
+            },
+            error() {
+                $("#commentFailModal").modal("show");
             }
         });
     }
@@ -51,7 +60,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="send-comment-button" type="button" class="btn btn-primary" onclick="sendComment()" data-work-id="">Send comment</button>
+        <button id="send-comment-button" type="button" class="btn btn-primary" onclick="sendComment()" data-reload="0">Send comment</button>
       </div>
     </div>
   </div>
@@ -59,7 +68,7 @@
 
 <div class="modal fade py-5" id="commentSuccessModal">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content text-success" style="font-size: 20px;">
+    <div class="modal-content text-success text-center" style="font-size: 20px;">
       The comment has been added successfully!
     </div>
   </div>
@@ -67,7 +76,7 @@
 
 <div class="modal fade py-5" id="commentFailModal">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content text-warning" style="font-size: 20px;">
+    <div class="modal-content text-danger text-center" style="font-size: 20px;">
       An error occured, comment has not been added!
     </div>
   </div>

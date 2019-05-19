@@ -19,3 +19,11 @@
         text-align: right;
     }
 }
+
+.list-font-size {
+    font-size: 24px;
+}
+
+.secondary-list-font-size {
+    font-size: 16px;
+}

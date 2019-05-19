@@ -114,7 +114,7 @@ window.onload = _ => {
                             )}`
                         );
                         sendCommentButton.setAttribute(
-                            "work-id",
+                            "data-work-id",
                             `${contentSections.findIndex(
                                 v => v.object === nextSection.object
                             )}`
