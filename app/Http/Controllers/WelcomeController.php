@@ -8,4 +8,9 @@ class WelcomeController extends Controller
     {
         return view('welcome');
     }
+
+    public function redirectToWelcome()
+    {
+        return redirect()->route('welcome');
+    }
 }

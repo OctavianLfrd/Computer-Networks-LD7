@@ -6,6 +6,10 @@ const downArrowLabel = document.getElementById("down-arrow-label");
 const controlButton = document.getElementById("control-button");
 const controlQuestionsButton = document.getElementById("control-questions");
 const controlMenu = document.getElementById("control-menu");
+const sendCommentButton = document.getElementById("send-comment-button");
+const viewAllCommentsButton = document.getElementById(
+    "view-all-comments-button"
+);
 const contentSections = [
     { object: document.getElementById("header-section"), isCurrent: true },
     { object: document.getElementById("section-0"), isCurrent: false },
@@ -18,6 +22,13 @@ const contentSections = [
 
 // Loading window:
 window.onload = _ => {
+    // AJAX Setup
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+        }
+    });
+
     for (let section of contentSections) {
         section.object.style.overflow = "hidden";
         if (section.isCurrent) section.object.style.height = "100%";
@@ -96,6 +107,18 @@ window.onload = _ => {
                             document.getElementById("section-0")
                     ) {
                         controlButton.style.display = "block";
+                        viewAllCommentsButton.setAttribute(
+                            "comment-id",
+                            `${contentSections.findIndex(
+                                v => v.object === nextSection.object
+                            )}`
+                        );
+                        sendCommentButton.setAttribute(
+                            "work-id",
+                            `${contentSections.findIndex(
+                                v => v.object === nextSection.object
+                            )}`
+                        );
                     }
                     if (
                         nextSection.object ===

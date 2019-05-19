@@ -1,0 +1,21 @@
+.header-color {
+    color: silver;
+}
+
+.title-color {
+    color: #54b0fc;
+}
+
+.common-color {
+    color: rgb(40, 40, 40);
+}
+
+.title-bold {
+    font-weight: bold;
+}
+
+.text-md-right {
+    @media screen and (min-width: 992px) {
+        text-align: right;
+    }
+}
